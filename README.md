@@ -39,9 +39,10 @@ docker-compose-flask-postgres/
 
 ## Services
 
-| Service | Description | Port |
-| web | Flask application | 5000 |
-| db | PostgreSQL 16 database | 5432 |
+| Service | Description              | Port |
+|---------|--------------------------|------|
+| `web`   | Flask application        | 5000 |
+| `db`    | PostgreSQL 16 database   | 5432 |
 
 # How to Run  
 
@@ -92,11 +93,12 @@ docker-compose down -v       #Stop containers and delete volumes
 
 The Flask application uses the following environment variables (defined in docker-compose.yml):  
 
-| Variable | Default value | Description |
-| DB_HOST | db | PostgreSQL hostname |
-| DB_NAME | tonibyte | Database name | 
-| DB_USER | tonibyte | Database user |
-| DB_PASSWORD | tonibytepass | Database password |
+| Variable       | Default value   | Description             |
+|----------------|-----------------|-------------------------|
+| `DB_HOST`      | `db`            | PostgreSQL hostname     |
+| `DB_NAME`      | `tonibyte`      | Database name           |
+| `DB_USER`      | `tonibyte`      | Database user           |
+| `DB_PASSWORD`  | `tonibytepass`  | Database password       |
 
 # How It Works
 
