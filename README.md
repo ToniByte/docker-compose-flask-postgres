@@ -2,7 +2,7 @@
 
 T O N I B Y T E 
 
-### Docker Compose — Flask + PostgreSQL
+### Docker Compose — Flask + PostgreSQL + СI/CD
 
 **Multi-container application with Flask and PostgreSQL**
 
@@ -109,6 +109,37 @@ chmod +x autocreate-project.sh
 
 ./autocreate-project.sh
 ```
+
+# CI/CD with GitHub Actions
+
+This project includes a continuous integration pipeline using GitHub Actions.
+
+## What the pipeline does  
+
+On every push or pull request to the `main` branch, GitHub Actions automatically:  
+
+1. Checks out the source code  
+2. Sets up Docker  
+3. Builds the Docker image  
+4. Runs a basic smoke test to verify the application starts correctly  
+
+### Workflow file
+
+The CI configuration is located at:
+
+```text
+.github/workflows/ci.yml
+```
+
+How to check pipeline status
+
+• Go to the repository on GitHub  
+• Open the Actions tab  
+• Select the latest workflow run to view logs and results  
+
+# Why CI is important
+Continuous Integration helps catch problems early by automatically building and testing the application on every change.  
+This reduces the risk of broken code reaching the main branch and makes the development process more reliable.
 
 # How It Works
 
