@@ -100,6 +100,16 @@ The Flask application uses the following environment variables (defined in docke
 | `DB_USER`      | `tonibyte`      | Database user           |
 | `DB_PASSWORD`  | `tonibytepass`  | Database password       |
 
+## Automatic Project Setup
+
+You can generate the entire project using the included script:
+
+```bash
+chmod +x autocreate-project.sh
+
+./autocreate-project.sh
+```
+
 # How It Works
 
 1. Docker Compose starts two services: web and db  
