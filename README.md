@@ -1,6 +1,6 @@
 <div align="center">
 
-# ToniByte
+T O N I B Y T E 
 
 ### Docker Compose — Flask + PostgreSQL
 
