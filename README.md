@@ -70,7 +70,7 @@ http://YOUR_SERVER_IP:5000
   
 You should see a message confirming that the database connection is successful.  
 
-text```
+```text
 Hello from Docker Compose!  
 Database connected successfully.  
 ```
@@ -114,10 +114,10 @@ Running multiple containers manually is inconvenient and error-prone.
 
 Docker Compose allows you to:  
 
-• Define the entire application stack in one file
-• Start and stop all services with a single command
-• Manage networking and volumes automatically
-• Keep the development environment consistent
+• Define the entire application stack in one file  
+• Start and stop all services with a single command  
+• Manage networking and volumes automatically  
+• Keep the development environment consistent  
 
 # License
 
