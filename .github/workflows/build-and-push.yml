@@ -57,3 +57,22 @@ jobs:
           sleep 5
           curl -f http://localhost:5000
           docker rm -f test-app
+
+      - name: Update GitOps image tag
+        if: github.event_name == 'push'
+        env:
+          GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}
+        run: |
+          set -e
+          TAG="${GITHUB_SHA::7}"
+          git clone https://x-access-token:${GITOPS_TOKEN}@github.com/ToniByte/k8s-helm-flask-gitops.git gitops
+          cd gitops
+
+          # update tag in values.yaml
+          sed -i "s/^  tag: .*/  tag: \"${TAG}\"/" charts/flask-app/values.yaml
+
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add charts/flask-app/values.yaml
+          git commit -m "chore: update flask-app image tag to ${TAG}" || echo "No changes"
+          git push
