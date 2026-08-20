@@ -1,5 +1,5 @@
 name: Build and Push Image
-
+ 
 on:
   push:
     branches: [ "main" ]
@@ -49,7 +49,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Smoke test
+      - name: Smoke test for app
         if: github.event_name == 'pull_request'
         run: |
           docker build -t test-app:pr .
